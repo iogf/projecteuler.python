@@ -14,8 +14,6 @@
 # 
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 
-ctz_formulae = lambda num: 3 * num + 1 if num % 2 else num // 2 
-
 class Collatz:
     def __init__(self):
         self.ctz_nums = {}
@@ -27,7 +25,7 @@ class Collatz:
         count = 1
 
         while num > 1:
-            num = ctz_formulae(num)
+            num = 3 * num + 1 if num % 2 else num // 2 
             try:
                 return count + self.ctz_nums[num]
             except KeyError:
