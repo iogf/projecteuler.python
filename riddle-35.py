@@ -7,7 +7,8 @@
 def rotations(num):
     nstr = str(num)
     for ind in range(0, len(nstr)):
-        yield int(nstr[1:] + nstr[:1])
+        nstr = nstr[1:] + nstr[:1]
+        yield int(nstr)
 
 class PrimeSeq:
     def __init__(self, max):
@@ -53,3 +54,4 @@ def calc():
 
 if __name__ == "__main__":
     calc()
+
